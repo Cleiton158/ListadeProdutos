@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Produtos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+
+    .filtros {
+      margin-bottom: 20px;
+    }
+
+    .filtros input,
+    .filtros select {
+      padding: 8px;
+      margin-right: 10px;
+    }
+
+    .produto {
+      border: 1px solid #2dda0a;
+      padding: 10px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .produto:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      cursor: pointer;
+    }
+
+    .produto img {
+      max-width: 100px;
+      margin-right: 15px;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .resumo {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    #mensagem {
+      color: red;
+      font-weight: bold;
+    }
+    p {
+      margin-bottom:  0px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Lista de Produtos</h1>
+
+  <div class="filtros">
+    <input type="text" id="filtroNome" placeholder="Filtrar por nome..." oninput="filtrarProdutos()">
+    <select id="filtroCategoria" onchange="filtrarProdutos()">
+      <option value="">Todas as categorias</option>
+      <option value="Games">Games</option>
+      <option value="Periféricos">Periféricos</option>
+      <option value="Pneus">Pneus</option>
+      <option value="Acessórios">Acessórios</option>
+    </select>
+  </div>
+
+  <div id="listaProdutos"></div>
+  <div id="mensagem"></div>
+  <div class="resumo" id="resumo"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
